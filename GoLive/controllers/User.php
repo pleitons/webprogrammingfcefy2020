@@ -23,4 +23,16 @@ class UserController
         }
         return('');
     }
+
+    public function signinController()
+    {
+        if(isset($_POST["username"]) && isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"]))
+        {
+
+        }else {
+            include "views/modules/login.php";
+        }
+
+        return "";
+    }
 }
