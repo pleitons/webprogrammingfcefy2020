@@ -26,9 +26,7 @@
 				<a href="login"> xd</a>';
 	});
 
-	$router->add('/webprogrammingfcefy2020/Golive/login', function () {
-		return 'Viendo el producto ';
-	});
+	$router->add('/webprogrammingfcefy2020/Golive/login', 'UserController::loginController');
 
 	$router->run();
 		

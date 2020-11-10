@@ -7,5 +7,6 @@ define("ASSETS_ADMIN", "</div>/assets/adminapp/");
 
 require 'Router.php';
 require 'Route.php';
+require CONTROLLERS_ROUTE."/User.php";
 include CONTROLLERS_ROUTE."/template.php";
 
