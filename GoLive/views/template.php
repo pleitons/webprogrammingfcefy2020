@@ -22,11 +22,12 @@
 		}else{
 			echo("Tuma");
 		}
-		return '<h1>Home</h1>';
+		return '<h1>Home</h1>
+				<a href="login"> xd</a>';
 	});
 
-	$router->add('/webprogrammingfcefy2020/Golive/:id', function ($id) {
-		return 'Viendo el producto ' . $id;
+	$router->add('/webprogrammingfcefy2020/Golive/login', function () {
+		return 'Viendo el producto ';
 	});
 
 	$router->run();
