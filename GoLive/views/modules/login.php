@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center align-items-center">
+<div class="d-flex justify-content-center align-items-center" id="#form" style="height: 100vh;">
 	<div class="container col-10 row bg-primary d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5">
 		<div class="info col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center ">
 			<p class="h3 pt-1 pb-3">
@@ -37,3 +37,60 @@
 
 	</div>
 </div>
+
+<style>
+    #form{
+        height: 100vh;
+        background-image: url(fondo.png)
+    }
+
+    .container{
+        border-radius: 15px;
+        height: 90%;
+    }
+
+    .info{
+        color : #fff;
+        height: 100%;
+    }
+
+    .boton{
+        color: #fff;
+        width: 50%;
+        padding: 15px 60px;
+        border: 2px solid #fff;
+        border-radius: 30px;
+        letter-spacing: 2px;
+    }
+    p>a.boton:hover{
+        text-decoration: none;
+        color:#0275d8;
+        background-color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .container div{
+        padding: 0 4vw;
+    }
+
+    .form{
+        background-color: #fff;
+        height: 100%;
+    }
+
+    form input{
+        height: 15px;
+    }
+
+    form .boton{
+        background-color: #0275d8;
+        color: #fff;
+    }
+
+    form .boton:hover{
+        background-color: #fff;
+        color:  #0275d8;
+        border: #0275d8 1.5px solid;
+}
+</style>

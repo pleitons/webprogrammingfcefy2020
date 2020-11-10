@@ -1,5 +1,5 @@
 <?php
-include_once "../models/conexion.php";
+include_once "models/conexion.php";
 
 class UserModel
 {
