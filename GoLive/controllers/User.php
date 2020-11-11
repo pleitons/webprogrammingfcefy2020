@@ -6,23 +6,26 @@ class UserController
 {
     public function loginController()
     {
-        if(isset($_POST["user"]) && isset($_POST["password"]))
-        {
+        if(isset($_POST["username"]) && isset($_POST["password"]))
+        {   
             if( preg_match('/^[a-zA-Z0-9\s]+$/', $_POST["username"]) &&
                 preg_match('/^(?=.*[A-Z])(?=.*[!@#$&*._-])(?=.*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,15}$/', $_POST["password"]))
             {
                 $contraseña = crypt($_POST["password"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$'); //encriptamos la contraseña
-                $datosController = array("usuario"=>$_POST["user"],
+                $datosController = array("usuario"=>$_POST["username"],
                                         "password"=>$contraseña);
+
                 $resultado = UserModel::loginModel($datosController);
-                if(!empty($resultado))
+
+                if($resultado == '')
                 {
                     echo '<div class="alert alert-success">Inicio sesion correctamente!</div>';
                 }
                 else
                 {
-                    echo '<div class="alert alert-danger">$resultado</div>';
+                    echo '<div class="alert alert-danger">Contraseña o usuario incorrecto.</div>';
                 }
+                unset($_POST);
             }
         }
         else
@@ -42,7 +45,6 @@ class UserController
             isset($_POST["password"]) &&
             isset($_POST["gender"]))
         {
-           
             if( 
                 preg_match('/^[a-zA-Z\s]+$/', $_POST["firstName"]) &&
                 preg_match('/^[a-zA-Z\s]+$/', $_POST["lastName"]) &&
@@ -62,13 +64,17 @@ class UserController
                     ':phoneNum'=>$_POST['phoneNum'],
                     ':email' => $_POST['email'],
                     ':username' => $_POST['username'],
-                    ':phoneNum' => $_POST["phoneNum"],
-                    ':password' => $password,
+                    ':password' => $password
                 );
-
                 $response = UserModel::signupModel($userData);
+                echo '<div class="alert alert-success">Inicio sesion correctamente!</div>';
             }
-        }else {
+            else
+            {
+                echo '<div class="alert alert-danger">Error al ingresar los datos, intente otra vez.</div>';
+            }
+        }else 
+        {
             include "views/modules/signup.php";
         }
 

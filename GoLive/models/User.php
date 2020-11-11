@@ -12,7 +12,7 @@ class UserModel
         $sentencia->execute();
 
         $resultado = $sentencia->fetch();
-
+        
         if (!empty($resultado))
         {
             if($resultado["password"] == $datosController["password"])
@@ -44,6 +44,7 @@ class UserModel
 
     public function signupModel($userData)
     {
+
         $stmt = Conexion::conectar()->prepare(" INSERT INTO users (id, roleId, genderId, name, lastName, phoneNum, email, username, password) 
                                                 VALUES (null, :roleId, :genderId, :name, :lastName, :phoneNum, :email, :username,:password )");
         //Holaaa
