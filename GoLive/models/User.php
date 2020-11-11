@@ -29,4 +29,13 @@ class UserModel
             $errores .= '<li>Contraseña o usuario incorrecto.</li>';
         }
     }
+
+    public function signupModel($userData)
+    {
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (nombre) VALUES (:nombre, :email, :mensaje)");
+
+        $stmt -> bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+        $stmt -> bindParam(":email", $datos["email"], PDO::PARAM_STR);
+        $stmt -> bindParam(":mensaje", $datos["mensaje"], PDO::PARAM_STR);
+    }
 }

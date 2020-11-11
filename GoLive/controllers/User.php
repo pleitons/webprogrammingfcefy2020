@@ -33,14 +33,6 @@ class UserController
             isset($_POST["password"]) &&
             isset($_POST["gender"]))
         {
-            var_dump($_POST);
-           echo(preg_match('/^[a-zA-Z\s]+$/', $_POST["firstName"]) ) ;
-           echo(preg_match('/^[a-zA-Z\s]+$/', $_POST["lastName"]) ) ;
-           echo(preg_match('/^[a-zA-Z0-9\s]+$/', $_POST["username"]) ) ;
-           echo(preg_match('/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/', $_POST["email"]) ) ;
-           echo(preg_match('/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,15}$/', $_POST["password"]) ) ;
-           echo(preg_match('/^[1-3]{1,1}$/', $_POST["gender"]));
-           
             if( 
                 preg_match('/^[a-zA-Z\s]+$/', $_POST["firstName"]) &&
                 preg_match('/^[a-zA-Z\s]+$/', $_POST["lastName"]) &&
@@ -49,7 +41,18 @@ class UserController
                 preg_match('/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,15}$/', $_POST["password"]) &&
                 preg_match('/^[1-3]{1,1}$/', $_POST["gender"]))
             {
-                echo("ola");
+                $password = crypt($_POST['password'], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$'); //encriptamos la contraseña
+
+                $userData = array(
+                    ':firstName' => $_POST['firstName'],
+                    ':lastName' => $_POST['lastName'],
+                    ':username' => $_POST['username'],
+                    ':email' => $_POST['email'],
+                    ':password' => $password,
+                    ':gender' => $_POST['gender'],
+                );
+
+                $response = UserModel::signupModel($userData);
             }
         }else {
             include "views/modules/signup.php";
