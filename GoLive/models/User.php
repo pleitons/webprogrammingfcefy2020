@@ -41,4 +41,12 @@ class UserModel
         }
         return($errores);
     }
+
+    public function signupModel($userData)
+    {
+        $stmt = Conexion::conectar()->prepare(" INSERT INTO users (firstName, lastName, username, email, password, gender) 
+                                                VALUES (:firstName, :lastName, :username, :email, :password, :gender)");
+
+        $stmt->execute($userData);
+    }
 }
