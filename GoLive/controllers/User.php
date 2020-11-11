@@ -15,6 +15,14 @@ class UserController
                 $datosController = array("usuario"=>$_POST["user"],
                 "password"=>$contraseña);
                 $resultado = UserModel::loginModel($datosController);
+                if(!empty($resultado))
+                {
+                    echo '<div class="alert alert-success">Inicio sesion correctamente!</div>';
+                }
+                else
+                {
+                    echo '<div class="alert alert-danger">Usuario o contraseña incorrecto</div>';
+                }
             }
         }
         else
