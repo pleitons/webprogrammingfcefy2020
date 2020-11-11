@@ -9,7 +9,7 @@ class UserController
         if(isset($_POST["user"]) && isset($_POST["password"]))
         {
             if( preg_match('/^[a-zA-Z0-9\s]+$/', $_POST["username"]) &&
-                preg_match('/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,15}$/', $_POST["password"]))
+                preg_match('/^(?=.*[A-Z])(?=.*[!@#$&*._-])(?=.*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,15}$/', $_POST["password"]))
             {
                 $contraseña = crypt($_POST["password"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$'); //encriptamos la contraseña
                 $datosController = array("usuario"=>$_POST["user"],
@@ -38,7 +38,7 @@ class UserController
            echo(preg_match('/^[a-zA-Z\s]+$/', $_POST["lastName"]) ) ;
            echo(preg_match('/^[a-zA-Z0-9\s]+$/', $_POST["username"]) ) ;
            echo(preg_match('/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/', $_POST["email"]) ) ;
-           echo(preg_match('/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,15}$/', $_POST["password"]) ) ;
+           echo(preg_match('/^(?=.*[A-Z])(?=.*[!@#$&*._-])(?=.*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,15}$/', $_POST["password"]) ) ;
            echo(preg_match('/^[1-3]{1,1}$/', $_POST["gender"]));
            
             if( 
@@ -46,7 +46,7 @@ class UserController
                 preg_match('/^[a-zA-Z\s]+$/', $_POST["lastName"]) &&
                 preg_match('/^[a-zA-Z0-9\s]+$/', $_POST["username"]) &&
                 preg_match('/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/', $_POST["email"]) &&
-                preg_match('/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,15}$/', $_POST["password"]) &&
+                preg_match('/^(?=.*[A-Z])(?=.*[!@#$&*._-])(?=.*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,15}$/', $_POST["password"]) &&
                 preg_match('/^[1-3]{1,1}$/', $_POST["gender"]))
             {
                 echo("ola");
