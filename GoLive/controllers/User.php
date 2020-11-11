@@ -36,7 +36,7 @@ class UserController
             if( preg_match('/^[a-zA-Z\s]+$/', $_POST["username"]) &&
                 preg_match('/^[a-zA-Z\s]+$/', $_POST["firstName"]) &&
                 preg_match('/^[a-zA-Z\s]+$/', $_POST["lastName"]) &&
-                preg_match(, $_POST["email"]) &&
+                preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/', $_POST["email"]) &&
                 preg_match('/^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])([A-Za-z\d$@$!%?&]|[^ ]){8,15}$/', $_POST["password"]))
             {
                 # code...
