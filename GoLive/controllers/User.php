@@ -24,7 +24,7 @@ class UserController
         return('');
     }
 
-    public function signinController()
+    public function signupController()
     {
         if( isset($_POST["username"]) &&
             isset($_POST["firstName"]) &&
