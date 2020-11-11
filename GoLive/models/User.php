@@ -41,6 +41,6 @@ class UserModel
         $stmt = Conexion::conectar()->prepare(" INSERT INTO users (firstName, lastName, username, email, password, gender) 
                                                 VALUES (:firstName, :lastName, :username, :email, :password, :gender)");
 
-        $stmt->execute($userData)
+        $stmt->execute($userData);
     }
 }
