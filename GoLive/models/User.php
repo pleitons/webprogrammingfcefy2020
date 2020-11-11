@@ -1,5 +1,6 @@
 <?php
 include_once "models/conexion.php";
+include_once "models/Session.php";
 
 class UserModel
 {
@@ -17,7 +18,11 @@ class UserModel
         {
             if($resultado["password"] == $datosController["password"])
             {
-                
+                $session = new Session;
+                $session->start();
+                $session->add('username', $datosController["usuario"]);
+                $session->add('rol', $resultado["roleId"]);
+                echo('login exitoso');
             }
             else
             {
@@ -28,6 +33,7 @@ class UserModel
         {
             $errores .= '<li>Contraseña o usuario incorrecto.</li>';
         }
+        echo($errores);
     }
 
     public function signupModel($userData)

@@ -15,15 +15,13 @@
 		<div class="form col-lg-8 col-md-12 d-flex flex-column justify-content-center text-center">
 
 		<h2 class="h2">
-				Crear Cuenta
+				Iniciar Sesion
 		</h2>
 
-			<form action="">
+			<form method="POST" action="">
 			<div class="form-group row d-flex flex-column align-items-center">
 
-				<input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="text" name="nombre" placeholder="Nombre">
-
-				<input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="email" name="email" placeholder="E-mail">
+				<input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="text" name="username" placeholder="Usuario">
 
 				<input class="form-control  mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="password" name="password" placeholder="Contraseña">
 
