@@ -5,6 +5,7 @@ class UserModel
 {
     public function loginModel($datosController)
     {
+        $errores = '';
         $conexion = Conexion::conectar();
         $sentencia = $conexion->prepare('SELECT * FROM users WHERE username = :usuario LIMIT 1');
         $sentencia -> bindParam(":usuario", $datosController["usuario"], PDO::PARAM_STR);
@@ -14,11 +15,18 @@ class UserModel
 
         if (!empty($resultado))
         {
-            if($resultado["password"] == $datosController["usuario"])
+            if($resultado["password"] == $datosController["password"])
             {
                 
             }
+            else
+            {
+                $errores .= '<li>Contraseña o usuario incorrecto.</li>';
+            }
         }
-
+        else
+        {
+            $errores .= '<li>Contraseña o usuario incorrecto.</li>';
+        }
     }
 }
