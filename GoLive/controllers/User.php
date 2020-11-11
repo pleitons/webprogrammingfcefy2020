@@ -37,7 +37,7 @@ class UserController
            echo(preg_match('/^[a-zA-Z\s]+$/', $_POST["lastName"]) ) ;
            echo(preg_match('/^[a-zA-Z\s]+$/', $_POST["username"]) ) ;
            echo(preg_match('/^(?=.[0-9])(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])([0-9A-Za-z\d$@$!%?&]|[^ ]){8,15}$/', $_POST["email"]) ) ;
-           echo(preg_match('/^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])([A-Za-z\d$@$!%?&]|[^ ]){8,15}$/', $_POST["password"]) ) ;
+           echo(preg_match('/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/', $_POST["password"]) ) ;
            echo(preg_match('/^[1-3]{1,1}$/', $_POST["gender"]));
            
             if( 
@@ -45,7 +45,7 @@ class UserController
                 preg_match('/^[a-zA-Z\s]+$/', $_POST["lastName"]) &&
                 preg_match('/^[a-zA-Z\s]+$/', $_POST["username"]) &&
                 preg_match('/^(?=.[0-9])(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])([0-9A-Za-z\d$@$!%?&]|[^ ]){8,15}$/', $_POST["email"]) &&
-                preg_match('/^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])([A-Za-z\d$@$!%?&]|[^ ]){8,15}$/', $_POST["password"]) &&
+                preg_match('/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/', $_POST["password"]) &&
                 preg_match('/^[1-3]{1,1}$/', $_POST["gender"]))
             {
                 echo("ola");
