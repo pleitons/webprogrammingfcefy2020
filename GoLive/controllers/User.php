@@ -38,6 +38,7 @@ class UserController
             isset($_POST["lastName"]) &&
             isset($_POST["username"]) &&
             isset($_POST["email"]) &&
+            isset($_POST["phoneNum"]) &&
             isset($_POST["password"]) &&
             isset($_POST["gender"]))
         {
@@ -47,6 +48,7 @@ class UserController
                 preg_match('/^[a-zA-Z\s]+$/', $_POST["lastName"]) &&
                 preg_match('/^[a-zA-Z0-9\s]+$/', $_POST["username"]) &&
                 preg_match('/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/', $_POST["email"]) &&
+                preg_match('/^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/', $_POST["phoneNum"]) &&
                 preg_match('/^(?=.*[A-Z])(?=.*[!@#$&*._-])(?=.*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,15}$/', $_POST["password"]) &&
                 preg_match('/^[1-3]{1,1}$/', $_POST["gender"]))
             {
@@ -57,6 +59,7 @@ class UserController
                     ':lastName' => $_POST['lastName'],
                     ':username' => $_POST['username'],
                     ':email' => $_POST['email'],
+                    ':phoneNum' => $_POST["phoneNum"],
                     ':password' => $password,
                     ':gender' => $_POST['gender'],
                 );
