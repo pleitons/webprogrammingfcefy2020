@@ -38,10 +38,9 @@ class UserModel
 
     public function signupModel($userData)
     {
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (nombre) VALUES (:nombre, :email, :mensaje)");
+        $stmt = Conexion::conectar()->prepare(" INSERT INTO users (firstName, lastName, username, email, password, gender) 
+                                                VALUES (:firstName, :lastName, :username, :email, :password, :gender)");
 
-        $stmt -> bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-        $stmt -> bindParam(":email", $datos["email"], PDO::PARAM_STR);
-        $stmt -> bindParam(":mensaje", $datos["mensaje"], PDO::PARAM_STR);
+        $stmt->execute($userData)
     }
 }
