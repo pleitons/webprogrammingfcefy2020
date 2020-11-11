@@ -26,23 +26,29 @@ class UserController
 
     public function signupController()
     {
-        if( isset($_POST["username"]) /*&&
-            isset($_POST["firstName"]) &&
+        if( isset($_POST["firstName"]) &&
             isset($_POST["lastName"]) &&
-            isset($_POST["gender"]) &&
+            isset($_POST["username"]) &&
             isset($_POST["email"]) &&
-            isset($_POST["password"])*/)
+            isset($_POST["password"]) &&
+            isset($_POST["gender"]))
         {
-            var_dump($_POST);
-            preg_match('/^[1-3]{1,1}$/', $_POST["gender"]);
-
-            if( preg_match('/^[a-zA-Z\s]+$/', $_POST["username"]) &&
+           echo(preg_match('/^[a-zA-Z\s]+$/', $_POST["firstName"]) ) ;
+           echo(preg_match('/^[a-zA-Z\s]+$/', $_POST["lastName"]) ) ;
+           echo(preg_match('/^[a-zA-Z\s]+$/', $_POST["username"]) ) ;
+           echo(preg_match('/^(?=.[0-9])(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])([0-9A-Za-z\d$@$!%?&]|[^ ]){8,15}$/', $_POST["email"]) ) ;
+           echo(preg_match('/^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])([A-Za-z\d$@$!%?&]|[^ ]){8,15}$/', $_POST["password"]) ) ;
+           echo(preg_match('/^[1-3]{1,1}$/', $_POST["gender"]));
+           
+            if( 
                 preg_match('/^[a-zA-Z\s]+$/', $_POST["firstName"]) &&
                 preg_match('/^[a-zA-Z\s]+$/', $_POST["lastName"]) &&
+                preg_match('/^[a-zA-Z\s]+$/', $_POST["username"]) &&
                 preg_match('/^(?=.[0-9])(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])([0-9A-Za-z\d$@$!%?&]|[^ ]){8,15}$/', $_POST["email"]) &&
-                preg_match('/^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])([A-Za-z\d$@$!%?&]|[^ ]){8,15}$/', $_POST["password"]))
+                preg_match('/^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])([A-Za-z\d$@$!%?&]|[^ ]){8,15}$/', $_POST["password"]) &&
+                preg_match('/^[1-3]{1,1}$/', $_POST["gender"]))
             {
-                # code...
+                echo("ola");
             }
         }else {
             include "views/modules/signup.php";
