@@ -2,10 +2,10 @@
 	<div class="container col-10 row bg-primary d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5">
 		<div class="info col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center ">
 			<p class="h3 pt-1 pb-3">
-				Bienvenido de nuevo
+				¿Sos nuevo por acá? ;)
 			</p>
 			<p class="lead pb-3">
-				Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Aperiam beatae atque, accusamus repellat 
+				Comenza a manejar tus actividades de forma smart.
 			</p>
 			<p class="mt-2"><a class="boton" href="registrarse">
 				Registrarse
