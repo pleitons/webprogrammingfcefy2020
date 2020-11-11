@@ -38,8 +38,8 @@ class UserModel
 
     public function signupModel($userData)
     {
-        $stmt = Conexion::conectar()->prepare(" INSERT INTO users (firstName, lastName, username, email, password, gender) 
-                                                VALUES (:firstName, :lastName, :username, :email, :password, :gender)");
+        $stmt = Conexion::conectar()->prepare(" INSERT INTO users (roleId, genderId, name, lastName, phoneNum, email, username,password) 
+                                                VALUES (null, :roleId, :genderId, :name, :lastName, :phoneNum, :email, :username,:password )");
 
         $stmt->execute($userData);
     }

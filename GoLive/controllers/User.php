@@ -45,12 +45,14 @@ class UserController
                 $password = crypt($_POST['password'], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$'); //encriptamos la contraseña
 
                 $userData = array(
-                    ':firstName' => $_POST['firstName'],
+                    ':roleId' => 2,
+                    ':genderId'=> $_POST['gender'],
+                    ':name' => $_POST['firstName'],
                     ':lastName' => $_POST['lastName'],
-                    ':username' => $_POST['username'],
+                    ':phoneNum'=> 1542121 ,// $_POST['phoneNum'],
                     ':email' => $_POST['email'],
+                    ':username' => $_POST['username'],
                     ':password' => $password,
-                    ':gender' => $_POST['gender'],
                 );
 
                 $response = UserModel::signupModel($userData);
