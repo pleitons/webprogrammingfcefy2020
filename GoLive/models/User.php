@@ -32,12 +32,12 @@ class UserModel
             }
             else
             {
-                $errores .= '<li>Contraseña o usuario incorrecto.</li>';
+                $errores .= 'Contraseña o usuario incorrecto.';
             }
         }
         else
         {
-            $errores .= '<li>Contraseña o usuario incorrecto.</li>';
+            $errores .= 'Contraseña o usuario incorrecto.';
         }
         return($errores);
     }
