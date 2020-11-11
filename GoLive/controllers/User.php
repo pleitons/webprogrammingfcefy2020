@@ -19,18 +19,30 @@ class UserController
         }
         else
         {
-            include 'views/modules/form.php';
+            include 'views/modules/login.php';
         }
         return('');
     }
 
     public function signinController()
     {
-        if(isset($_POST["username"]) && isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["password"]))
+        if( isset($_POST["username"]) &&
+            isset($_POST["firstName"]) &&
+            isset($_POST["lastName"]) &&
+            isset($_POST["gender"]) &&
+            isset($_POST["email"]) &&
+            isset($_POST["password"]))
         {
-
+            if( preg_match('/^[a-zA-Z\s]+$/', $_POST["username"]) &&
+                preg_match('/^[a-zA-Z\s]+$/', $_POST["firstName"]) &&
+                preg_match('/^[a-zA-Z\s]+$/', $_POST["lastName"]) &&
+                preg_match(, $_POST["email"]) &&
+                preg_match('/^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&])([A-Za-z\d$@$!%?&]|[^ ]){8,15}$/', $_POST["password"]))
+            {
+                # code...
+            }
         }else {
-            include "views/modules/login.php";
+            include "views/modules/signup.php";
         }
 
         return "";

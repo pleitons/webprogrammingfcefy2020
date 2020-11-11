@@ -7,7 +7,7 @@
 			<p class="lead pb-3">
 				Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Aperiam beatae atque, accusamus repellat 
 			</p>
-			<p class="mt-2"><a class="boton">
+			<p class="mt-2"><a class="boton" href="registrarse">
 				Registrarse
 			</a></p>
 		</div>
