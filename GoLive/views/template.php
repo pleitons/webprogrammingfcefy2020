@@ -46,7 +46,7 @@
 				<a href="login"> xd</a>';
 	});
 
-	$router->add('/webprogrammingfcefy2020/Golive/login', 'UserController::loginController');
+	$router->add('/webprogrammingfcefy2020/Golive/ingresar', 'UserController::loginController');
 
 	$router->add('/webprogrammingfcefy2020/Golive/registrarse', 'UserController::signupController');
 
