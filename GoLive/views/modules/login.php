@@ -37,58 +37,68 @@
 </div>
 
 <style>
-    #form{
-        height: 100vh;
-        background-image: url(fondo.png)
-    }
-
-    .container{
-        border-radius: 15px;
-        height: 90%;
-    }
-
-    .info{
-        color : #fff;
-        height: 100%;
-    }
-
-    .boton{
-        color: #fff;
-        width: 50%;
-        padding: 15px 60px;
-        border: 2px solid #fff;
-        border-radius: 30px;
-        letter-spacing: 2px;
-    }
-    p>a.boton:hover{
-        text-decoration: none;
-        color:#0275d8;
-        background-color: #fff;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .container div{
-        padding: 0 4vw;
-    }
-
-    .form{
-        background-color: #fff;
-        height: 100%;
-    }
-
-    form input{
-        height: 15px;
-    }
-
-    form .boton{
-        background-color: #0275d8;
-        color: #fff;
-    }
-
-    form .boton:hover{
-        background-color: #fff;
-        color:  #0275d8;
-        border: #0275d8 1.5px solid;
+    body{
+	height: 100vh;
+	background: linear-gradient(90deg, rgba(4,178,115,1) 0%, rgba(5,126,93,1) 18%, rgba(6,77,72,1) 30%, rgba(7,4,41,1) 62%,rgba(7,4,41,1) 100%);
 }
+
+.container{
+	font-family: 'Poppins', sans-serif;
+	height: 90%;
+	border-radius: 40px;
+}
+
+.lead{
+	font-family: sans-serif;
+}
+
+h2.h2{
+	color: #0B0050;
+}
+
+.info{
+	color : #f9f8ff;
+	height: 100%;
+	background: linear-gradient(90deg, rgba(11,0,80,1) 0%, rgba(7,4,41,1) 100%);
+}
+
+.boton{
+	color: #fff;
+	width: 50%;
+	padding: 15px 60px;
+	border: 2px solid #fff;
+	border-radius: 30px;
+	letter-spacing: 2px;
+	transition: background .1s linear .1s;
+}
+p>a.boton:hover{
+	text-decoration: none;
+	color: rgb(11,0,80);
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.container div{
+	padding: 0 4vw;
+}
+
+.form{
+	background-color: #fff;
+	height: 100%;
+}
+
+form input{
+	height: 15px;
+}
+
+form .boton{
+	background-color: rgb(11,0,80);
+	color: #fff;
+}
+
+form .boton:hover{
+	background-color: #fff;
+	color:  rgb(11,0,80);
+	border: rgb(11,0,80) 1.5px solid;
+}   
 </style>

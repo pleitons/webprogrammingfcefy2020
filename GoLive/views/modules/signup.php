@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center align-items-center" id="#form" style="height: 100vh;">
     <div class="container col-10 row bg-primary d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5">
-        <div class="info col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center ">
+        <div class="info col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center " style="border-radius: 42px;">
             <p class="h3 pt-1 pb-3">
                 ¿Ya tenes cuenta?
             </p>
@@ -65,59 +65,68 @@
 </div>
 
 <style>
-    #form {
-        height: 100vh;
-        background-image: url(fondo.png)
-    }
+    body{
+	height: 100vh;
+	background: linear-gradient(90deg, rgba(4,178,115,1) 0%, rgba(5,126,93,1) 18%, rgba(6,77,72,1) 30%, rgba(7,4,41,1) 62%,rgba(7,4,41,1) 100%);
+}
 
-    .container {
-        border-radius: 15px;
-        height: 90%;
-    }
+.container{
+	font-family: 'Poppins', sans-serif;
+	height: 90%;
+	border-radius: 40px;
+}
 
-    .info {
-        color: #fff;
-        height: 100%;
-    }
+.lead{
+	font-family: sans-serif;
+}
 
-    .boton {
-        color: #fff;
-        width: 50%;
-        padding: 15px 60px;
-        border: 2px solid #fff;
-        border-radius: 30px;
-        letter-spacing: 2px;
-    }
+h2.h2{
+	color: #0B0050;
+}
 
-    p>a.boton:hover {
-        text-decoration: none;
-        color: #0275d8;
-        background-color: #fff;
-        font-weight: bold;
-        cursor: pointer;
-    }
+.info{
+	color : #f9f8ff;
+	height: 100%;
+	background: linear-gradient(90deg, rgba(11,0,80,1) 0%, rgba(7,4,41,1) 100%);
+}
 
-    .container div {
-        padding: 0 4vw;
-    }
+.boton{
+	color: #fff;
+	width: 50%;
+	padding: 15px 60px;
+	border: 2px solid #fff;
+	border-radius: 30px;
+	letter-spacing: 2px;
+	transition: background .1s linear .1s;
+}
+p>a.boton:hover{
+	text-decoration: none;
+	color: rgb(11,0,80);
+	background-color: #fff;
+	cursor: pointer;
+}
 
-    .form {
-        background-color: #fff;
-        height: 100%;
-    }
+.container div{
+	padding: 0 4vw;
+}
 
-    form input {
-        height: 15px;
-    }
+.form{
+	background-color: #fff;
+	height: 100%;
+}
 
-    form .boton {
-        background-color: #0275d8;
-        color: #fff;
-    }
+form input{
+	height: 15px;
+}
 
-    form .boton:hover {
-        background-color: #fff;
-        color: #0275d8;
-        border: #0275d8 1.5px solid;
-    }
+form .boton{
+	background-color: rgb(11,0,80);
+	color: #fff;
+}
+
+form .boton:hover{
+	background-color: #fff;
+	color:  rgb(11,0,80);
+	border: rgb(11,0,80) 1.5px solid;
+}
 </style>
