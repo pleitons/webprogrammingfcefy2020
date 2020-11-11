@@ -13,7 +13,7 @@ class UserController
             {
                 $contraseña = crypt($_POST["password"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$'); //encriptamos la contraseña
                 $datosController = array("usuario"=>$_POST["user"],
-                "password"=>$contraseña);
+                                        "password"=>$contraseña);
                 $resultado = UserModel::loginModel($datosController);
                 if(!empty($resultado))
                 {
@@ -21,7 +21,7 @@ class UserController
                 }
                 else
                 {
-                    echo '<div class="alert alert-danger">Usuario o contraseña incorrecto</div>';
+                    echo '<div class="alert alert-danger">$resultado</div>';
                 }
             }
         }
