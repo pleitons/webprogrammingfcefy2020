@@ -1,6 +1,5 @@
 <?php
 include_once "models/conexion.php";
-include_once "models/Session.php";
 
 class UserModel
 {
@@ -18,28 +17,36 @@ class UserModel
         {
             if($resultado["password"] == $datosController["password"])
             {
-                $session = new Session;
-                $session->start();
-                $session->add('username', $datosController["usuario"]);
-                $session->add('rol', $resultado["roleId"]);
-                echo('login exitoso');
+                
+            session_start();
+            $_SESSION["validar"] = true;
+            $_SESSION["id"] = $resultado["id"];
+            $_SESSION["roleId"] = $resultado["roleId"];
+            $_SESSION["genderId"] = $resultado["genderId"];
+            $_SESSION["name"] = $resultado["name"];
+            $_SESSION["lastName"] = $resultado["lastName"];
+            $_SESSION["phoneNum"] = $resultado["phoneNum"];
+            $_SESSION["email"] = $resultado["email"];
+		    $_SESSION["username"] = $datosController["usuario"];
+
             }
             else
             {
-                $errores .= '<li>Contraseña o usuario incorrecto.</li>';
+                $errores .= 'Contraseña o usuario incorrecto.';
             }
         }
         else
         {
-            $errores .= '<li>Contraseña o usuario incorrecto.</li>';
+            $errores .= 'Contraseña o usuario incorrecto.';
         }
-        echo($errores);
+        return($errores);
     }
 
     public function signupModel($userData)
     {
-        $stmt = Conexion::conectar()->prepare(" INSERT INTO users (firstName, lastName, username, email, password, gender) 
-                                                VALUES (:firstName, :lastName, :username, :email, :password, :gender)");
+        $stmt = Conexion::conectar()->prepare(" INSERT INTO users (id, roleId, genderId, name, lastName, phoneNum, email, username, password) 
+                                                VALUES (null, :roleId, :genderId, :name, :lastName, :phoneNum, :email, :username,:password )");
+        //Holaaa
 
         $stmt->execute($userData);
     }
