@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center align-items-center" id="#form" style="height: 100vh;">
     <div class="container col-10 row bg-primary d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5">
-        <div class="info col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center " style="border-radius: 42px;">
+        <div class="info col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center " style="border-top-left-radius: 42px;border-bottom-left-radius: 42px;">
             <p class="h3 pt-1 pb-3">
                 ¿Ya tenes cuenta?
             </p>
@@ -12,7 +12,7 @@
                 </a></p>
         </div>
 
-        <div class="form col-lg-8 col-md-12 d-flex flex-column justify-content-center text-center">
+        <div class="form col-lg-8 col-md-12 d-flex flex-column justify-content-center text-center" style="border-top-right-radius: 42px; border-bottom-right-radius: 42px;">
 
             <h2 class="h2">
                 Crear Cuenta
@@ -27,34 +27,30 @@
                     <input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="email" name="email" placeholder="E-mail">
                     <input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="phone" name="phoneNum" placeholder="Teléfono">
                     <input class="form-control  mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="password" name="password" placeholder="Contraseña">
-                    <br>
-                    <br>    
-                    <fieldset class="form-group">
-                        <div class="row">
-                            <legend class="col-form-label col-sm-2 pt-0">Género</legend>
-                            <div class="col-sm-10">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="1" checked>
+                    <fieldset class="form-group col-10">
+ 
+                            <legend class="col-form-label col-sm-2 pt-4">Género</legend>
+                            <div class="row">
+                                <div class="form-check col-lg-4 col-md-12">
+                                    <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="1" checked="">
                                     <label class="form-check-label" for="gridRadios1">
                                         Masculino
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check col-lg-4 col-md-12">
                                     <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="2">
                                     <label class="form-check-label" for="gridRadios2">
                                         Femenino
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check col-lg-4 col-md-12">
                                     <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="3">
                                     <label class="form-check-label" for="gridRadios2">
                                         Otro    
                                     </label>
                                 </div>
-                            </div>
                         </div>
                     </fieldset>
-                    
                     <button type="submit" class=" boton rounded-pill mt-5 col-lg-4 col-md-6 col-xs-8 ">Registrarse</button>
                 </div>
 

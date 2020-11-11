@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center align-items-center" id="#form" style="height: 100vh;">
-	<div class="container col-10 row bg-primary d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5">
-		<div class="info col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center ">
+	<div class="container col-10 row bg-primary d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5" style="">
+		<div class="info col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center " style="border-top-left-radius: 42px;border-bottom-left-radius: 42px;">
 			<p class="h3 pt-1 pb-3">
 				¿Sos nuevo por acá? ;)
 			</p>
@@ -12,7 +12,7 @@
 			</a></p>
 		</div>
 
-		<div class="form col-lg-8 col-md-12 d-flex flex-column justify-content-center text-center">
+		<div class="form col-lg-8 col-md-12 d-flex flex-column justify-content-center text-center" style="border-top-right-radius: 42px; border-bottom-right-radius: 42px;">
 
 		<h2 class="h2">
 				Iniciar Sesion
