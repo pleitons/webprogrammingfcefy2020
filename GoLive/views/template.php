@@ -48,7 +48,7 @@
 
 	$router->add('/webprogrammingfcefy2020/Golive/login', 'UserController::loginController');
 
-	$router->add('/webprogrammingfcefy2020/Golive/registrarse', 'UserController::signinController');
+	$router->add('/webprogrammingfcefy2020/Golive/registrarse', 'UserController::signupController');
 
 
 	$router->run();
