@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-11-2020 a las 20:16:56
--- Versión del servidor: 10.4.13-MariaDB
--- Versión de PHP: 7.4.8
+-- Tiempo de generación: 12-11-2020 a las 19:22:52
+-- Versión del servidor: 10.4.14-MariaDB
+-- Versión de PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -74,6 +74,15 @@ CREATE TABLE `genders` (
   `name` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `genders`
+--
+
+INSERT INTO `genders` (`id`, `name`) VALUES
+(1, 'Masculi'),
+(2, 'Femenin'),
+(3, 'Na');
+
 -- --------------------------------------------------------
 
 --
@@ -114,6 +123,15 @@ CREATE TABLE `roles` (
   `rolName` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`id`, `rolName`) VALUES
+(1, 'Administracion'),
+(2, 'Usuario'),
+(3, 'Administrador de Institución');
+
 -- --------------------------------------------------------
 
 --
@@ -153,11 +171,20 @@ CREATE TABLE `users` (
   `genderId` int(6) NOT NULL,
   `name` varchar(100) NOT NULL,
   `lastName` varchar(100) NOT NULL,
-  `phoneNum` int(15) NOT NULL,
+  `phoneNum` varchar(15) NOT NULL,
   `email` varchar(100) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL
+  `password` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `roleId`, `genderId`, `name`, `lastName`, `phoneNum`, `email`, `username`, `password`) VALUES
+(16, 2, 2, 'Ana', 'Carbajo', '2644636436', 'aniic.1701@gmail.com', 'anacarbajo17', '$2a$07$asxx54ahjppf45sd87a5au.oN8fCpmgc3ccW1Tmi2p3jzZrRyqNYi'),
+(17, 2, 1, 'pepito', 'hongito', '2644158762', 'gdfgfd@gmail.com', 'elpepe', '$2a$07$asxx54ahjppf45sd87a5aubCwEL5ItHj/a/0pgDqhsxoGZfT6ANwG'),
+(18, 2, 2, 'lola', 'mento', '2644158762', 'lolamento@gmail.com', 'lolamento', '$2a$07$asxx54ahjppf45sd87a5au4MDyxXUQ/1TR2kvy8yihDSTQWeUs7ZO');
 
 --
 -- Índices para tablas volcadas
@@ -263,7 +290,7 @@ ALTER TABLE `dues`
 -- AUTO_INCREMENT de la tabla `genders`
 --
 ALTER TABLE `genders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `inscriptions`
@@ -281,7 +308,7 @@ ALTER TABLE `institutions`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `rooms`
@@ -299,7 +326,7 @@ ALTER TABLE `schedules`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restricciones para tablas volcadas
@@ -309,39 +336,39 @@ ALTER TABLE `users`
 -- Filtros para la tabla `attendances`
 --
 ALTER TABLE `attendances`
-  ADD CONSTRAINT `attendances_ibfk_1` FOREIGN KEY (`ScheduleId`) REFERENCES `schedules` (`Id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `attendances_ibfk_1` FOREIGN KEY (`scheduleId`) REFERENCES `schedules` (`id`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `disciplines`
 --
 ALTER TABLE `disciplines`
-  ADD CONSTRAINT `disciplines_ibfk_1` FOREIGN KEY (`ScheduleId`) REFERENCES `schedules` (`Id`);
+  ADD CONSTRAINT `disciplines_ibfk_1` FOREIGN KEY (`scheduleId`) REFERENCES `schedules` (`id`);
 
 --
 -- Filtros para la tabla `dues`
 --
 ALTER TABLE `dues`
-  ADD CONSTRAINT `dues_ibfk_1` FOREIGN KEY (`InscriptionId`) REFERENCES `inscriptions` (`Id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `dues_ibfk_2` FOREIGN KEY (`CustomerId`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `dues_ibfk_1` FOREIGN KEY (`inscriptionId`) REFERENCES `inscriptions` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `dues_ibfk_2` FOREIGN KEY (`customerId`) REFERENCES `users` (`id`);
 
 --
 -- Filtros para la tabla `inscriptions`
 --
 ALTER TABLE `inscriptions`
-  ADD CONSTRAINT `inscriptions_ibfk_1` FOREIGN KEY (`DueId`) REFERENCES `dues` (`Id`),
-  ADD CONSTRAINT `inscriptions_ibfk_2` FOREIGN KEY (`IdDisciplines`) REFERENCES `disciplines` (`id`);
+  ADD CONSTRAINT `inscriptions_ibfk_1` FOREIGN KEY (`dueId`) REFERENCES `dues` (`id`),
+  ADD CONSTRAINT `inscriptions_ibfk_2` FOREIGN KEY (`idDisciplines`) REFERENCES `disciplines` (`id`);
 
 --
 -- Filtros para la tabla `institutions`
 --
 ALTER TABLE `institutions`
-  ADD CONSTRAINT `institutions_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `institutions_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `rooms`
 --
 ALTER TABLE `rooms`
-  ADD CONSTRAINT `rooms_ibfk_1` FOREIGN KEY (`InstitutionId`) REFERENCES `institutions` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `rooms_ibfk_1` FOREIGN KEY (`institutionId`) REFERENCES `institutions` (`id`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `users`
