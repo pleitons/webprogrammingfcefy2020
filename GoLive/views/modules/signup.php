@@ -46,7 +46,7 @@
     <div class="d-flex justify-content-center align-items-center" id="#form">
         <div class="container col-10 row d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5">
             <div class="col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center" style="color: #ffffff;">
-            <img src="assets/app/img/google-fit-750x371.png">
+            <img src="assets/app/img/imgform.png">
                 <p class="h3 pt-1 pb-3">
                     ¿Ya tenes cuenta?
                 </p>
