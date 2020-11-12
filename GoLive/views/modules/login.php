@@ -43,7 +43,7 @@
 	</div>
 </header><!-- End Header -->
 
-<section id="hero" class="d-flex container-fluid align-items-center" style="height: 100vh;">
+<section id="hero" class="d-flex container-fluid align-items-center">
 	<div class="d-flex justify-content-center align-items-center" id="#form" style="height: 100vh;">
 		<div class="container col-10 row bg-primary d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5" style="">
 			<div class="info col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center " style="border-top-left-radius: 42px;border-bottom-left-radius: 42px;">
