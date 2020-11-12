@@ -23,7 +23,7 @@
 	<link href="assets/app/vendor/aos/aos.css" rel="stylesheet">
 
 	<!-- Template Main CSS File -->
-	<link href="assets/css/style.css" rel="stylesheet">
+	<link href="assets/app/css/style.css" rel="stylesheet">
 
 	
 </head>
@@ -47,7 +47,9 @@
 	$router->run();
 		
 	?>
+	  
 
+	
 </body>
 
 </html>
