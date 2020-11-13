@@ -6,7 +6,7 @@
         <div class="col-xl-9 d-flex align-items-center">
           <h1 class="logo mr-auto"><a href="index.html">GO LIVE</a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="index.html" class="logo mr-auto"><img src="assets/img/logo2.png" alt="" class="img-fluid"></a>-->
+            <a href="index.html" class="logo mr-auto"><img src="assets/img/logo2.png" alt="" class="img-fluid"></a>
 
           <nav class="nav-menu d-none d-lg-block">
             <ul>
@@ -44,9 +44,9 @@
 
 <section id="hero" class="d-flex container-fluid justify-content-center align-items-center">
     <div class="d-flex justify-content-center align-items-center" id="#form">
-        <div class="container col-10 row d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5">
+        <div class="container col-10 row d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5" style="margin-top: 50px; background-color: #333a5aa3;">
             <div class="col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center" style="color: #ffffff;">
-            <img src="assets/app/img/imgform.png">
+            <img src="assets/app/img/imgform.png" class="imgform">
                 <p class="h3 pt-1 pb-3">
                     ¿Ya tenes cuenta?
                 </p>
@@ -60,7 +60,7 @@
 
             <div class="form col-lg-8 col-md-12 d-flex flex-column justify-content-center text-center" style="border-top-right-radius: 42px; border-bottom-right-radius: 42px;">
 
-                <h2 style="color:#0B0050; font-size: 30px;">
+                <h2 style="color:#0B0050; font-size: 35px;">
                     Crear Cuenta
                 </h2>
 
@@ -73,7 +73,7 @@
                         <input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="email" name="email" placeholder="E-mail">
                         <input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="phone" name="phoneNum" placeholder="Teléfono">
                         <input class="form-control  mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="password" name="password" placeholder="Contraseña">
-                        <fieldset class="form-group col-10">
+                        <fieldset class="form-group">
     
                                 <legend class="col-form-label col-sm-2 pt-4">Género</legend>
                                 <div class="row">
@@ -97,7 +97,7 @@
                                     </div>
                             </div>
                         </fieldset>
-                        <button type="submit" class=" boton rounded-pill mt-5 col-lg-4 col-md-6 col-xs-8 ">Registrarse</button>
+                        <button type="submit" class=" boton rounded-pill mt-2 col-lg-4 col-md-6 col-xs-8 ">Registrarse</button>
                     </div>
 
                 </form>
@@ -110,6 +110,12 @@
 
 
 <style>
+
+.imgform{
+  height: 165px;
+  margin-bottom: 22px;
+}
+
 .container{
 	font-family: 'Poppins', sans-serif;
 	height: 90%;
@@ -147,8 +153,7 @@ p>a.boton:hover{
 }
 
 .form{
-	background-color: #fff;
-	height: 100%;
+  background-color: rgb(255 253 253);
 }
 
 form input{
