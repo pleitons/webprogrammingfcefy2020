@@ -97,7 +97,7 @@
                                     </div>
                             </div>
                         </fieldset>
-                        <button type="submit" class=" boton rounded-pill mt-2 col-lg-4 col-md-6 col-xs-8 ">Registrarse</button>
+                        <button type="submit" class=" boton rounded-pill mt-2 col-md-6 col-xs-8 ">Registrarse</button>
                     </div>
 
                 </form>
