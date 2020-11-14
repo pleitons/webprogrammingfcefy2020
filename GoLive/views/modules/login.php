@@ -44,11 +44,11 @@
 
 <section id="hero" class="d-flex container-fluid justify-content-center align-items-center">
     <div class="d-flex justify-content-center align-items-center" id="#form">
-        <div class="container row d-flex p-0 pb-lg-0 pb-md-5" style="background-color: #333a5aa3;">
+        <div class="container row d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5" style="background-color: #333a5aa3;">
             <div class="col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center" style="color: #ffffff;">
-            <img src="assets/app/img/imgform.png" class="imgform">
+            <img src="assets/app/img/34839d0e5658c919930ed9fd3c8b1437.png" class="imgform">
                 <p class="h3 pt-1 pb-3">
-					¿Sos nuevo por acá? ;)
+					¿Sos nuevo por acá?
                 </p>
                 <p class="lead pb-3">
 					Comenza a manejar tus actividades de forma smart. <br> <strong>;)</strong>
@@ -76,7 +76,6 @@
 				</div>
                 </form>
             </div>
-
         </div>
     </div>
 </section>
