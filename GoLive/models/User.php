@@ -51,7 +51,7 @@ class UserModel
 
     public function validateUserModel($userData)
     {
-        $stmt = Conexion::conectar()-> prepare("SELECT name from users WHERE name = :name");
+        $stmt = Conexion::conectar()-> prepare("SELECT name from users WHERE username = :username");
         $stmt -> execute($userData);
         return $stmt ->fetch();
     }

@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Golive</title>
 
-	<!--Techie-->	
+	<!--Techie-->
 	<!-- Favicons -->
 	<link href="assets/app/img/favicon.png" rel="icon">
 	<link href="assets/app/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -25,7 +25,7 @@
 	<!-- Template Main CSS File -->
 	<link href="assets/app/css/style.css" rel="stylesheet">
 
-	
+
 </head>
 
 <body>
@@ -36,7 +36,7 @@
 
 	//Aca se hacen los llamados a los controladores para brindar una respuesta
 	$router->add('/webprogrammingfcefy2020/Golive/', function () {
-			return '<h1>Home</h1>';
+		return '<h1>Home</h1>';
 	});
 
 	$router->add('/webprogrammingfcefy2020/Golive/ingresar', 'UserController::loginController');
@@ -44,45 +44,57 @@
 	$router->add('/webprogrammingfcefy2020/Golive/registrarse', 'UserController::signupController');
 
 	$router->run();
-		
+
 	?>
-	  
-  <!-- Vendor JS Files -->
-  <script src="assets/app/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/app/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/app/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/app/vendor/php-email-form/validate.js"></script>
-  <script src="assets/app/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/app/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/app/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/app/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/app/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/app/vendor/aos/aos.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/app/js/main.js"></script>
+	<!-- Vendor JS Files -->
+	<script src="assets/app/vendor/jquery/jquery.min.js"></script>
+	<script src="assets/app/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/app/vendor/jquery.easing/jquery.easing.min.js"></script>
+	<script src="assets/app/vendor/php-email-form/validate.js"></script>
+	<script src="assets/app/vendor/waypoints/jquery.waypoints.min.js"></script>
+	<script src="assets/app/vendor/counterup/counterup.min.js"></script>
+	<script src="assets/app/vendor/owl.carousel/owl.carousel.min.js"></script>
+	<script src="assets/app/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="assets/app/vendor/venobox/venobox.min.js"></script>
+	<script src="assets/app/vendor/aos/aos.js"></script>
+
+	<!-- Template Main JS File -->
+	<script src="assets/app/js/main.js"></script>
 	<script>
-	$(document).ready(function () { 
-		$('#name').on("keyup" ,function () {
+		$(document).ready(function() {
+			$('#username').on("keyup", function() {
 
-			var username = $('#name').val();
-			var datos = new FormData();
-			datos.append("name", username);
+				var username = $('#username').val();
+				var datos = new FormData();
+				datos.append("username", username);
+				var regex = /^[a-zA-Z0-9\s]+$/;
 
-			$.ajax({
-				type: "POST",
-				url: "views/modules/ajax.php",
-				data: datos,
-				dataType: "dataType",
-				cache: false,
-				contentType: false,
-				processData: false,
-				success: function (response) {
-					console.log("xd");
+				if(regex.test(username)){
+					$.ajax({
+						type: "POST",
+						url: "views/modules/ajax.php",
+						data: datos,
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(response) {
+							if(response != 0){
+								$('#username').addClass('is-invalid').removeClass('is-valid');
+
+							}else{
+								$('#username').addClass('is-valid').removeClass('is-invalid');
+							}
+						},
+						error: function(){
+
+						}
+					});
+				}else{
+					$('#username').addClass('is-invalid').removeClass('is-valid');
 				}
 			});
 		});
-	});
 	</script>
 </body>
 
