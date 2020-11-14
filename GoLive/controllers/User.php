@@ -94,22 +94,16 @@ class UserController
     {
 
         $dataModel = array(
-            ":name" => $data
+            ":username" => $data
         );
         $response = UserModel::validateUserModel($dataModel);
 
-        var_dump($response);
-        $ban = false;
-        if ($ban) {
-            $ban = true;
-        }
-
-        if($ban)
+        if($response)
         {
-            return true;
+            echo 1;
         }else
         {
-            return false;
+            echo 0;
         }
     }
 }

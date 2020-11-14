@@ -15,4 +15,4 @@ class Ajax
 }
 
 $a = new Ajax();
-$a -> userValidateAjax($_POST["name"]);
+$a -> userValidateAjax($_POST["username"]);
