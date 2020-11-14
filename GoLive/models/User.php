@@ -1,5 +1,4 @@
 <?php
-include_once "models/conexion.php";
 
 class UserModel
 {
@@ -47,8 +46,13 @@ class UserModel
 
         $stmt = Conexion::conectar()->prepare(" INSERT INTO users (id, roleId, genderId, name, lastName, phoneNum, email, username, password) 
                                                 VALUES (null, :roleId, :genderId, :name, :lastName, :phoneNum, :email, :username,:password )");
-        //Holaaa
-
         $stmt->execute($userData);
+    }
+
+    public function validateUserModel($userData)
+    {
+        $stmt = Conexion::conectar()-> prepare("SELECT name from users WHERE name = :name");
+        $stmt -> execute($userData);
+        return $stmt ->fetch();
     }
 }

@@ -9,5 +9,6 @@ require 'Route.php';
 require CONTROLLERS_ROUTE."/User.php";
 include CONTROLLERS_ROUTE."/template.php";
 //include ROOT."models/Session.php";
-
+include 'models/User.php';
+include_once "models/conexion.php";
 
