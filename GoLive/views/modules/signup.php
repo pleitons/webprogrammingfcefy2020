@@ -44,7 +44,7 @@
 
 <section id="hero" class="d-flex container-fluid justify-content-center align-items-center">
     <div class="d-flex justify-content-center align-items-center" id="#form">
-        <div class="container col-10 row d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5" style="margin-top: 50px; background-color: #333a5aa3;">
+        <div class="container col-10 row d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5" style="background-color: #333a5aa3;">
             <div class="col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center" style="color: #ffffff;">
             <img src="assets/app/img/imgform.png" class="imgform">
                 <p class="h3 pt-1 pb-3">

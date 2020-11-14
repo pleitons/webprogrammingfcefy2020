@@ -43,8 +43,8 @@
 </header><!-- End Header -->
 
 <section id="hero" class="d-flex container-fluid justify-content-center align-items-center">
-    <div class="d-flex justify-content-center align-items-center" id="#form">
-        <div class="container row d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5" style="background-color: #333a5aa3;">
+    <div class="d-flex justify-content-center align-items-center" id="#form" style="height: 80vh; width: 100%;">
+        <div class="container col-lg-8 col-md-12 row d-flex justify-content-center align-items-center p-0 pb-lg-0 pb-md-5" style="background-color: #333a5aa3;">
             <div class="col-lg-4 col-md-12 text-center d-flex flex-column justify-content-center" style="color: #ffffff;">
             <img src="assets/app/img/34839d0e5658c919930ed9fd3c8b1437.png" class="imgform">
                 <p class="h3 pt-1 pb-3">
@@ -60,16 +60,16 @@
 
             <div class="form col-lg-8 col-md-12 d-flex flex-column justify-content-center text-center" style="border-top-right-radius: 42px; border-bottom-right-radius: 42px;">
 
-                <h2 style="color:#0B0050; font-size: 35px;">
+                <h2 style="color:#0B0050; font-size: 35px; margin-bottom:20px;">
 					Iniciar Sesion
                 </h2>
 
                 <form METHOD="POST" action="">
 				<div class="form-group row d-flex flex-column align-items-center">
 
-					<input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="text" name="username" placeholder="Usuario">
+					<input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-10 col-md-10 col-xs-12" type="text" name="username" placeholder="Usuario">
 
-					<input class="form-control  mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="password" name="password" placeholder="Contraseña">
+					<input class="form-control  mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-10 col-md-10 col-xs-12" type="password" name="password" placeholder="Contraseña">
 
 					<button type="submit" class=" boton rounded-pill mt-5 col-md-6 col-xs-8 ">Ingresar</button>
 
@@ -126,8 +126,7 @@ p>a.boton:hover{
 
 .form{
   background-color: rgb(255 253 253);
-  height: 70vh;
-  width: 50%;
+  height: 100%;
 }
 
 form input{
