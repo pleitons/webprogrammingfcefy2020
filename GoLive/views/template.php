@@ -43,13 +43,47 @@
 
 	$router->add('/webprogrammingfcefy2020/Golive/registrarse', 'UserController::signupController');
 
-
 	$router->run();
 		
 	?>
 	  
+  <!-- Vendor JS Files -->
+  <script src="assets/app/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/app/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/app/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/app/vendor/php-email-form/validate.js"></script>
+  <script src="assets/app/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/app/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/app/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/app/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/app/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/app/vendor/aos/aos.js"></script>
 
-	
+  <!-- Template Main JS File -->
+  <script src="assets/app/js/main.js"></script>
+	<script>
+	$(document).ready(function () { 
+		$('#name').on("keyup" ,function () {
+
+			var username = $('#name').val();
+			var datos = new FormData();
+			datos.append("name", username);
+
+			$.ajax({
+				type: "POST",
+				url: "views/modules/ajax.php",
+				data: datos,
+				dataType: "dataType",
+				cache: false,
+				contentType: false,
+				processData: false,
+				success: function (response) {
+					console.log("xd");
+				}
+			});
+		});
+	});
+	</script>
 </body>
 
 </html>
