@@ -90,13 +90,13 @@ class UserController
         return "";
     }
 
-    public function validateUserController($data)
+    public function validateUsernameController($data)
     {
 
         $dataModel = array(
             ":username" => $data
         );
-        $response = UserModel::validateUserModel($dataModel);
+        $response = UserModel::validateUsernameModel($dataModel);
 
         if($response)
         {
@@ -106,4 +106,21 @@ class UserController
             echo 0;
         }
     }
+
+    public function validateEmailController($data){
+        
+        $dataModel = array(
+            ":email" => $data
+        );
+        $response = UserModel::validateEmailController($dataModel);
+
+        if($response)
+        {
+            echo 1;
+        }else
+        {
+            echo 0;
+        }
+    }
+    
 }

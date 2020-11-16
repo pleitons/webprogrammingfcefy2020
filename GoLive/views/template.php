@@ -63,8 +63,8 @@
 	<script src="assets/app/js/main.js"></script>
 	<script>
 		$(document).ready(function() {
-			$('#username').on("keyup", function() {
 
+			$('#username').on("keyup", function() {
 				var username = $('#username').val();
 				var datos = new FormData();
 				datos.append("username", username);
@@ -94,6 +94,71 @@
 					$('#username').addClass('is-invalid').removeClass('is-valid');
 				}
 			});
+
+			$('#email').on("keyup", function() {
+				var email = $('#email').val();
+				var datos = new FormData();
+				datos.append("email", email);
+				var regex = /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/;
+
+				if(regex.test(email)){
+					$.ajax({
+						type: "POST",
+						url: "views/modules/ajax.php",
+						data: datos,
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(response) {
+							if(response != 0){
+								$('#email').addClass('is-invalid').removeClass('is-valid');
+
+							}else{
+								$('#email').addClass('is-valid').removeClass('is-invalid');
+							}
+						},
+						error: function(){
+
+						}
+					});
+				}else{
+					$('#email').addClass('is-invalid').removeClass('is-valid');
+				}
+			});
+
+			$('#name').on( "keyup" ,function () {
+				var regex = /^([a-zA-Z\s]+){3,40}$/;
+				var firstName = $(this).val();
+
+				if(regex.test(firstName)){
+					$(this).addClass('is-valid').removeClass('is-invalid');
+				}else{
+					$(this).addClass('is-invalid').removeClass('is-valid');
+				}
+			});
+
+			$('#lastname').on( "keyup" ,function () {
+				var regex = /^([a-zA-Z\s]+){3,40}$/;
+				var firstName = $(this).val();
+
+				if(regex.test(firstName)){
+					$(this).addClass('is-valid').removeClass('is-invalid');
+				}else{
+					$(this).addClass('is-invalid').removeClass('is-valid');
+				}
+			});
+
+			$('#phoneNum').on( "keyup" ,function () {
+				var regex = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
+				var phoneNum = $(this).val();
+
+				if(regex.test(phoneNum)){
+					$(this).addClass('is-valid').removeClass('is-invalid');
+				}else{
+					$(this).addClass('is-invalid').removeClass('is-valid');
+				}
+			});
+			
 		});
 	</script>
 </body>
