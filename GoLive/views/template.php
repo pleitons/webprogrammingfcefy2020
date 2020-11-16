@@ -36,7 +36,8 @@
 
 	//Aca se hacen los llamados a los controladores para brindar una respuesta
 	$router->add('/webprogrammingfcefy2020/Golive/', function () {
-		return '<h1>Home</h1>';
+		include "views/modules/home.php";
+		return '';
 	});
 
 	$router->add('/webprogrammingfcefy2020/Golive/ingresar', 'UserController::loginController');
