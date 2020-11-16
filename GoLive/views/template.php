@@ -8,7 +8,7 @@
 
 	<!--Techie-->
 	<!-- Favicons -->
-	<link href="assets/app/img/favicon.png" rel="icon">
+	<link href="assets/app/img/favicon.ico" rel="icon">
 	<link href="assets/app/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 	<!-- Google Fonts -->
