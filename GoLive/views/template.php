@@ -81,9 +81,12 @@
 						success: function(response) {
 							if(response != 0){
 								$('#username').addClass('is-invalid').removeClass('is-valid');
+								$('#submitButton').prop('disabled', false);
 
 							}else{
 								$('#username').addClass('is-valid').removeClass('is-invalid');
+								$('#submitButton').prop('disabled', true);
+
 							}
 						},
 						error: function(){
@@ -92,6 +95,7 @@
 					});
 				}else{
 					$('#username').addClass('is-invalid').removeClass('is-valid');
+					$('#submitButton').prop('disabled', true);
 				}
 			});
 
@@ -112,9 +116,10 @@
 						success: function(response) {
 							if(response != 0){
 								$('#email').addClass('is-invalid').removeClass('is-valid');
-
+								$('#submitButton').prop('disabled', false);
 							}else{
 								$('#email').addClass('is-valid').removeClass('is-invalid');
+								$('#submitButton').prop('disabled', true);
 							}
 						},
 						error: function(){
@@ -123,6 +128,7 @@
 					});
 				}else{
 					$('#email').addClass('is-invalid').removeClass('is-valid');
+					$('#submitButton').prop('disabled', true);
 				}
 			});
 
@@ -132,8 +138,10 @@
 
 				if(regex.test(firstName)){
 					$(this).addClass('is-valid').removeClass('is-invalid');
+					$('#submitButton').prop('disabled', false);
 				}else{
 					$(this).addClass('is-invalid').removeClass('is-valid');
+					$('#submitButton').prop('disabled', true);
 				}
 			});
 
@@ -143,8 +151,10 @@
 
 				if(regex.test(firstName)){
 					$(this).addClass('is-valid').removeClass('is-invalid');
+					$('#submitButton').prop('disabled', false);
 				}else{
 					$(this).addClass('is-invalid').removeClass('is-valid');
+					$('#submitButton').prop('disabled', true);
 				}
 			});
 
@@ -154,8 +164,10 @@
 
 				if(regex.test(phoneNum)){
 					$(this).addClass('is-valid').removeClass('is-invalid');
+					$('#submitButton').prop('disabled', false);
 				}else{
 					$(this).addClass('is-invalid').removeClass('is-valid');
+					$('#submitButton').prop('disabled', true);
 				}
 			});
 			
