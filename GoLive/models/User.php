@@ -49,9 +49,15 @@ class UserModel
         $stmt->execute($userData);
     }
 
-    public function validateUserModel($userData)
+    public function validateUsernameModel($userData)
     {
         $stmt = Conexion::conectar()-> prepare("SELECT name from users WHERE username = :username");
+        $stmt -> execute($userData);
+        return $stmt ->fetch();
+    }
+
+    public function validateEmailController($userData){
+        $stmt = Conexion::conectar()-> prepare("SELECT name from users WHERE email = :email");
         $stmt -> execute($userData);
         return $stmt ->fetch();
     }

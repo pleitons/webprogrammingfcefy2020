@@ -8,7 +8,7 @@
 
 	<!--Techie-->
 	<!-- Favicons -->
-	<link href="assets/app/img/favicon.png" rel="icon">
+	<link href="assets/app/img/favicon.ico" rel="icon">
 	<link href="assets/app/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 	<!-- Google Fonts -->
@@ -36,7 +36,8 @@
 
 	//Aca se hacen los llamados a los controladores para brindar una respuesta
 	$router->add('/webprogrammingfcefy2020/Golive/', function () {
-		return '<h1>Home</h1>';
+		include "views/modules/home.php";
+		return '';
 	});
 
 	$router->add('/webprogrammingfcefy2020/Golive/ingresar', 'UserController::loginController');
@@ -63,8 +64,8 @@
 	<script src="assets/app/js/main.js"></script>
 	<script>
 		$(document).ready(function() {
-			$('#username').on("keyup", function() {
 
+			$('#username').on("keyup", function() {
 				var username = $('#username').val();
 				var datos = new FormData();
 				datos.append("username", username);
@@ -81,9 +82,12 @@
 						success: function(response) {
 							if(response != 0){
 								$('#username').addClass('is-invalid').removeClass('is-valid');
+								$('#submitButton').prop('disabled', false);
 
 							}else{
 								$('#username').addClass('is-valid').removeClass('is-invalid');
+								$('#submitButton').prop('disabled', true);
+
 							}
 						},
 						error: function(){
@@ -92,8 +96,82 @@
 					});
 				}else{
 					$('#username').addClass('is-invalid').removeClass('is-valid');
+					$('#submitButton').prop('disabled', true);
 				}
 			});
+
+			$('#email').on("keyup", function() {
+				var email = $('#email').val();
+				var datos = new FormData();
+				datos.append("email", email);
+				var regex = /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/;
+
+				if(regex.test(email)){
+					$.ajax({
+						type: "POST",
+						url: "views/modules/ajax.php",
+						data: datos,
+						cache: false,
+						contentType: false,
+						processData: false,
+						success: function(response) {
+							if(response != 0){
+								$('#email').addClass('is-invalid').removeClass('is-valid');
+								$('#submitButton').prop('disabled', false);
+							}else{
+								$('#email').addClass('is-valid').removeClass('is-invalid');
+								$('#submitButton').prop('disabled', true);
+							}
+						},
+						error: function(){
+
+						}
+					});
+				}else{
+					$('#email').addClass('is-invalid').removeClass('is-valid');
+					$('#submitButton').prop('disabled', true);
+				}
+			});
+
+			$('#name').on( "keyup" ,function () {
+				var regex = /^([a-zA-Z\s]+){3,40}$/;
+				var firstName = $(this).val();
+
+				if(regex.test(firstName)){
+					$(this).addClass('is-valid').removeClass('is-invalid');
+					$('#submitButton').prop('disabled', false);
+				}else{
+					$(this).addClass('is-invalid').removeClass('is-valid');
+					$('#submitButton').prop('disabled', true);
+				}
+			});
+
+			$('#lastname').on( "keyup" ,function () {
+				var regex = /^([a-zA-Z\s]+){3,40}$/;
+				var firstName = $(this).val();
+
+				if(regex.test(firstName)){
+					$(this).addClass('is-valid').removeClass('is-invalid');
+					$('#submitButton').prop('disabled', false);
+				}else{
+					$(this).addClass('is-invalid').removeClass('is-valid');
+					$('#submitButton').prop('disabled', true);
+				}
+			});
+
+			$('#phoneNum').on( "keyup" ,function () {
+				var regex = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
+				var phoneNum = $(this).val();
+
+				if(regex.test(phoneNum)){
+					$(this).addClass('is-valid').removeClass('is-invalid');
+					$('#submitButton').prop('disabled', false);
+				}else{
+					$(this).addClass('is-invalid').removeClass('is-valid');
+					$('#submitButton').prop('disabled', true);
+				}
+			});
+			
 		});
 	</script>
 </body>

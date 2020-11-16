@@ -4,13 +4,13 @@
 
       <div class="row justify-content-center">
         <div class="col-xl-9 d-flex align-items-center">
-          <h1 class="logo mr-auto"><a href="index.html">GO LIVE</a></h1>
+          <h1 class="logo mr-auto"><a href="home">GO LIVE</a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
             <a href="index.html" class="logo mr-auto"><img src="assets/img/logo2.png" alt="" class="img-fluid"></a>
 
           <nav class="nav-menu d-none d-lg-block">
             <ul>
-              <li class="active"><a href="index.html">Home</a></li>
+              <li class="active"><a href="/">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#portfolio">Portfolio</a></li>
@@ -68,17 +68,18 @@
        <form METHOD="POST" action="">
                <div class="form-group row d-flex flex-column align-items-center">
 
-                        <input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="text" name="firstName" placeholder="Nombre" id="name">
-                        <input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="text" name="lastName" placeholder="Apellido">
-                        <input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="text" name="username" id="username" placeholder="Nombre de usuario">
-                        <div class="invalid-feedback">
+                        <input required class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="text" name="firstName" placeholder="Nombre" id="name">
+                        <input required class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="text" name="lastName" placeholder="Apellido" id="lastname">
+                        <input required class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="text" name="username" id="username" placeholder="Nombre de usuario">
+                        
+                        <!--<div class="invalid-feedback">
                           Nombre de usuario no valido :(
-                        </div>
+                        </div>-->
 
-                        <input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="email" name="email" placeholder="E-mail">
+                        <input required class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="email" name="email" placeholder="E-mail" id="email">
 
-                        <input class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="phone" name="phoneNum" placeholder="Teléfono">
-                        <input class="form-control  mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="password" name="password" placeholder="Contraseña">
+                        <input required class="form-control mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="phone" name="phoneNum" placeholder="Teléfono" id="phoneNum">
+                        <input required class="form-control  mt-3 pt-3 pb-3 pl-4 pr-4 col-lg-8 col-md-10 col-xs-12" type="password" name="password" placeholder="Contraseña" id="password">
                         <fieldset class="form-group">
     
                                 <legend class="col-form-label col-sm-2 pt-4">Género</legend>
@@ -103,7 +104,7 @@
                                     </div>
                             </div>
                         </fieldset>
-                        <button type="submit" class=" boton rounded-pill mt-2 col-md-6 col-xs-8 ">Registrarse</button>
+                        <button type="submit" class=" boton rounded-pill mt-2 col-md-6 col-xs-8 " id="submitButton">Registrarse</button>
                     </div>
             </form>    
     </div>
